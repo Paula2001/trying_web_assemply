@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="a.out.js"></script>
+    <script>
+        function run_wasm() {
+            // var result = Module.ccall(
+            //     'main',
+            //     "number",
+            //     null,
+            //     null
+            // );
+
+            var result2 = Module.ccall(
+                'addNums',
+                "number",
+                ["number", "number"],
+                [2,3]
+            );
+            alert(`addNums is a function created with web-assemply look to main.c and this is the result = ${result2}`);
+        }
+
+    </script>
+    <button onclick="run_wasm()">Testing</button>
+</body>
+</html>
